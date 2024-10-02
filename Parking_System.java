@@ -54,4 +54,23 @@ public class Parking_System{
         
         System.out.println(" Car Parked Sucessfully . Available Slots :"+Available_Slots);
     }
+    
+    public static void RemoveCar(){
+        if(Available_Slots == Total_Slots){
+            System.out.println(" There are NO parked Cars");
+            
+        }
+        Scanner input=new Scanner(System.in);
+        System.out.println(" Enter the License plate number of the car to be Removed : ");
+
+        String License_Plate=input.nextLine();
+        if(Parke_Car.contains(License_Plate)){
+            Parke_Car.remove(License_Plate);
+            Available_Slots++;
+            System.out.println(" The car removed successfully . Available Slots: "+Available_Slots);
+        }else{
+            System.out.println(" the car is not parked here. ");
+        }
+    }
+
 }
